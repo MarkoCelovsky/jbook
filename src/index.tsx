@@ -1,12 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
+import { createRoot } from "react-dom/client";
+import CodeCell from "./components/CodeCell";
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const App = () => {
+  return (
+    <div>
+      <CodeCell />
+    </div>
+  );
+};
+
+const container = document.querySelector("#root");
+const root = createRoot(container!);
+root.render(<App />);
